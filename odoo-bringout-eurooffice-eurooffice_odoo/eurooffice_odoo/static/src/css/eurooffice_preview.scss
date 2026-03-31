@@ -1,0 +1,47 @@
+.o-overlay-item {
+  &:has(.o-eurooffice-preview) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+}
+
+.o-eurooffice-overlay-item {
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.o-eurooffice-preview {
+  position: absolute;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  .o-eurooffice-preview-header {
+    display: flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: space-between;
+
+    .o-eurooffice-header-title {
+      column-gap: 10px;
+    }
+  }
+
+  .o-eurooffice-preview-body {
+    .o-eurooffice-body-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}

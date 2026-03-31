@@ -1,0 +1,24 @@
+.o-eurooffice-templates-tree {
+  .o-eurooffice-tree-list {
+    .o-eurooffice-list-item {
+      .o-eurooffice-item-body {
+        .o-eurooffice-body-template {
+          label {
+            display: flex;
+            align-items: center;
+            column-gap: 6px;
+
+            .o-eurooffice-template-checkbox {
+              margin: 0 !important;
+            }
+
+            button {
+              padding: 0 !important;
+              border: none !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_eurooffice_dms_access,eurooffice.dms.access,model_eurooffice_dms_access,base.group_user,1,1,1,1
+access_eurooffice_dms_access_user,eurooffice.dms.access.user,model_eurooffice_dms_access_user,base.group_user,1,1,1,1

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="eurooffice_odoo_templates.TemplateEditor" owl="1">
+    <html>
+      <head>
+        <meta charset="UTF-8" />
+        <title> Euro-Office </title>
+        <style>
+          html, body {
+            height: 100%;
+          }
+        </style>
+      </head>
+      <body class="o-eurooffice-template">
+        <div class="o-eurooffice-template-fields border-end">
+          <div class="o-eurooffice-fields-title">
+            <span> Fields </span>
+          </div>
+          <hr class="o-eurooffice-template-separator" />
+          <t t-if="state.resModel">
+            <ExportData resModel="state.resModel" />
+          </t>
+        </div>
+        <div class="o-eurooffice-template-editor">
+          <div id="doceditor" />
+          <div id="error" class="w-25 m-auto my-5 py-5 d-flex flex-column d-none">
+            <img src="/eurooffice_odoo_templates/static/svg/eurooffice_logo.svg" alt="Euro-Office logo" />
+            <div class="my-3 alert alert-danger">
+              <p> Euro-Office cannot be reached. Please contact admin. </p>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  </t>
+</templates>

@@ -1,0 +1,33 @@
+[project]
+name = "odoo-bringout-eurooffice-eurooffice_odoo_templates"
+version = "16.0.3.3.0"
+description = "Euro-Office/Euro-Office document templates for Odoo"
+authors = [
+    { name = "Euro-Office", email = "support@eurooffice.com" }
+]
+dependencies = [
+    "pyjwt>=2.0.0"
+]
+readme = "README.md"
+requires-python = ">= 3.11"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business",
+]
+
+[project.urls]
+homepage = "https://github.com/Euro-Office/eurooffice_odoo"
+repository = "https://github.com/Euro-Office/eurooffice_odoo"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["eurooffice_odoo_templates"]
