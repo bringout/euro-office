@@ -11,7 +11,6 @@
         <title> Euro-Office - <t t-out="docTitle" /> </title>
         <link rel="icon" t-att-href="docIcon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <t t-call-assets="web.assets_frontend" t-js="false" />
         <style>
           html, body {
             height: 100%;
@@ -28,9 +27,6 @@
             document.cookie = `tz=${userTZ}; path=/`;
           }
         </script>
-        <t t-call-assets="web.assets_frontend_minimal" t-css="false" defer_load="True" />
-        <t t-call="web.conditional_assets_tests" />
-        <t t-call-assets="web.assets_frontend_lazy" t-css="false" lazy_load="True" />
       </head>
       <body>
         <t t-out="0" />
