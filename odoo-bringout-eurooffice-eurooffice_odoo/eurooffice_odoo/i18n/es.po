@@ -241,7 +241,7 @@ msgstr "Clave secreta de Euro-Office Docs"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
-#: code:addons/eurooffice_odoo/static/src/models/attachment_card_onlyoffice.js:0
+#: code:addons/eurooffice_odoo/static/src/models/attachment_card_eurooffice.js:0
 msgid "Euro-Office Docs server"
 msgstr "Servidor de Euro-Office Docs"
 
@@ -280,7 +280,7 @@ msgstr "Abrir archivo en la misma pestaña"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
-#: code:addons/eurooffice_odoo/static/src/components/attachment_card_onlyoffice/attachment_card_onlyoffice.xml:0
+#: code:addons/eurooffice_odoo/static/src/components/attachment_card_eurooffice/attachment_card_eurooffice.xml:0
 msgid "Open in Euro-Office"
 msgstr "Abrir en Euro-Office"
 
@@ -325,7 +325,7 @@ msgstr "Hoja de cálculo"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
-#: code:addons/eurooffice_odoo/static/src/models/attachment_card_onlyoffice.js:0
+#: code:addons/eurooffice_odoo/static/src/models/attachment_card_eurooffice.js:0
 msgid ""
 "The 30-day test period is over, you can no longer connect to demo Euro-Office"
 " Docs server"

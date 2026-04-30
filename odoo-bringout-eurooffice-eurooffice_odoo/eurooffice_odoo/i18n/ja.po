@@ -245,7 +245,7 @@ msgstr "Euro-Office Docsシークレットキー"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
-#: code:addons/eurooffice_odoo/static/src/models/attachment_card_onlyoffice.js:0
+#: code:addons/eurooffice_odoo/static/src/models/attachment_card_eurooffice.js:0
 msgid "Euro-Office Docs server"
 msgstr "Euro-Office Docsサーバ"
 
@@ -289,7 +289,7 @@ msgstr "同じタブでファイルを開く"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
-#: code:addons/eurooffice_odoo/static/src/components/attachment_card_onlyoffice/attachment_card_onlyoffice.xml:0
+#: code:addons/eurooffice_odoo/static/src/components/attachment_card_eurooffice/attachment_card_eurooffice.xml:0
 msgid "Open in Euro-Office"
 msgstr "Euro-Officeで開く"
 
@@ -334,7 +334,7 @@ msgstr "スプレッドシート"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
-#: code:addons/eurooffice_odoo/static/src/models/attachment_card_onlyoffice.js:0
+#: code:addons/eurooffice_odoo/static/src/models/attachment_card_eurooffice.js:0
 msgid ""
 "The 30-day test period is over, you can no longer connect to demo Euro-Office"
 " Docs server"
