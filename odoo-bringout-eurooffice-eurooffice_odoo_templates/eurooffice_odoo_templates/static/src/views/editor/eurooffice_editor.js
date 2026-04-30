@@ -1,21 +1,23 @@
 /** @odoo-module **/
 
+import { cookie } from "@web/core/browser/cookie"
+import { router } from "@web/core/browser/router"
+import { _t } from "@web/core/l10n/translation"
+import { rpc } from "@web/core/network/rpc"
 import { registry } from "@web/core/registry"
-import { useService } from "@web/core/utils/hooks"
-import { _t } from "web.core"
+import { useBus, useService } from "@web/core/utils/hooks"
 import { ExportData } from "./eurooffice_editor_export_data"
 
 const { Component, useState, onMounted, onWillUnmount } = owl
 
 class TemplateEditor extends Component {
   setup() {
-    super.setup()
+    super.setup(...arguments)
     this.orm = useService("orm")
-    this.rpc = useService("rpc")
+    this.rpc = rpc
     this.ExportData = ExportData
     this.notificationService = useService("notification")
-    this.cookies = useService("cookie")
-    this.router = useService("router")
+    this.router = router
 
     this.state = useState({ resModel: "" })
 
@@ -26,7 +28,7 @@ class TemplateEditor extends Component {
     this.script = null
     this.unchangedModels = {}
 
-    this.env.bus.on("eurooffice-template-create-form", this, (field) => this.createForm(field))
+    useBus(this.env.bus, "eurooffice-template-create-form", (field) => this.createForm(field.detail))
 
     onMounted(async () => {
       try {
@@ -56,7 +58,7 @@ class TemplateEditor extends Component {
             this.documentReady = true
           },
         }
-        const theme = this.cookies.current.color_scheme
+        const theme = cookie.get("color_scheme")
         config.editorConfig.customization = {
           ...config.editorConfig.customization,
           uiTheme: theme ? `default-${theme}` : "default-light",
@@ -93,7 +95,6 @@ class TemplateEditor extends Component {
       if (window.DocsAPI) {
         delete window.DocsAPI
       }
-      this.env.bus.off("eurooffice-template-create-form", this)
     })
   }
 

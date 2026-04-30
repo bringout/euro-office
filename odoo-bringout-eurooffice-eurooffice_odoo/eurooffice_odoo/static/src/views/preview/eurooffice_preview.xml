@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
-  <t t-name="eurooffice_odoo.EuroofficePreview" owl="1">
+  <t t-name="eurooffice_odoo.OnlyofficePreview" owl="1">
     <div class="o-eurooffice-preview w-100 h-100 bg-black-75" t-on-click="(ev) => this.onClickOutside(ev)">
       <div class="o-eurooffice-preview-header d-flex w-75 mt-5 bg-black-75 text-400">
         <div class="o-eurooffice-header-title d-flex align-items-center px-3">

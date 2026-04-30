@@ -1,11 +1,11 @@
 /** @odoo-module **/
 
 import { KanbanRenderer } from "@web/views/kanban/kanban_renderer"
-import { EuroofficeKanbanRecord } from "./eurooffice_kanban_record"
+import { OnlyofficeKanbanRecord } from "./eurooffice_kanban_record"
 
-export class EuroofficeKanbanRenderer extends KanbanRenderer {
+export class OnlyofficeKanbanRenderer extends KanbanRenderer {
   setup() {
-    super.setup()
+    super.setup(...arguments)
   }
 
   /**
@@ -23,7 +23,7 @@ export class EuroofficeKanbanRenderer extends KanbanRenderer {
   }
 }
 
-EuroofficeKanbanRenderer.components = {
+OnlyofficeKanbanRenderer.components = {
   ...KanbanRenderer.components,
-  KanbanRecord: EuroofficeKanbanRecord,
+  KanbanRecord: OnlyofficeKanbanRecord,
 }

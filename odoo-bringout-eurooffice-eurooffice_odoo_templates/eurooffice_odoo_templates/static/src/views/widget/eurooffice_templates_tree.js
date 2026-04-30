@@ -1,7 +1,7 @@
 /** @odoo-module **/
 
 import { Component, useState, onWillStart } from "@odoo/owl"
-import { EuroofficePreview } from "@eurooffice_odoo/views/preview/eurooffice_preview"
+import { OnlyofficePreview } from "@eurooffice_odoo/views/preview/eurooffice_preview"
 import { registry } from "@web/core/registry"
 import { useService } from "@web/core/utils/hooks"
 
@@ -59,7 +59,7 @@ export class TemplatesTree extends Component {
     const url = `/eurooffice/template/template_content/${encodeURIComponent(path.replace("/", "_"))}`
 
     this.env.services.dialog.add(
-      EuroofficePreview,
+      OnlyofficePreview,
       {
         close: () => {
           this.env.services.dialog.close()
@@ -78,4 +78,4 @@ export class TemplatesTree extends Component {
 
 TemplatesTree.template = "eurooffice_odoo_templates.TemplatesTree"
 
-registry.category("fields").add("eurooffice_template_tree", TemplatesTree)
+registry.category("fields").add("eurooffice_template_tree", { component: TemplatesTree })

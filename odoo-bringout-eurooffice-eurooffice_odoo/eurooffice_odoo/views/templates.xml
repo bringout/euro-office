@@ -56,10 +56,6 @@
           }
           return null;
         }
-        // Skip version mismatch check between web-apps (x2t) and Euro-Office docservice
-        // web-apps About dialog shows x2t version (e.g. 9.2.1) but docservice reports
-        // Euro-Office version (0-unstable-*). Setting compareVersions bypasses the check.
-        window.compareVersions = true;
         const color_scheme = getCookie('color_scheme');
         var config = JSON.parse('<t t-out="editorConfig" />');
         config.editorConfig.customization.uiTheme = color_scheme ? `default-${color_scheme}` : "default-light";
@@ -72,14 +68,6 @@
           }
         }
         if (window.DocsAPI) {
-          config.events = config.events || {};
-          config.events.onError = function(event) {
-            console.error("Euro-Office Error:", JSON.stringify(event));
-            var errorDiv = document.getElementById("error");
-            errorDiv.classList.remove("d-none");
-            errorDiv.querySelector(".alert-danger p").textContent =
-              "Euro-Office Error: " + (event.data ? JSON.stringify(event.data) : JSON.stringify(event));
-          };
           var docEditor = new DocsAPI.DocEditor("doceditor", config);
         } else {
           document.getElementById("error").classList.remove("d-none");

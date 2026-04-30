@@ -9,7 +9,7 @@ from odoo.modules import get_module_path
 _logger = logging.getLogger(__name__)
 
 
-class EuroOfficeDemoTemplate(models.Model):
+class OnlyOfficeDemoTemplate(models.Model):
     _name = "eurooffice.odoo.demo.templates"
     _description = "Euro-Office Demo Templates"
 

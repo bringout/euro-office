@@ -3,7 +3,7 @@
   <t t-name="eurooffice_odoo_templates.ExportDataItem" owl="1">
     <div
       t-att-data-field_id="props.field.id"
-      t-attf-class="o-eurooffice-list-field {{ state.subfields.length ? 'o-eurooffice-list-field_expanded mb-2' : '' }} {{ props.field.parent ? 'o-eurooffice-list-field_children' : ''}}"
+      t-attf-class="o-eurooffice-list-field list-group {{ state.subfields.length ? 'o-eurooffice-list-field_expanded mb-2' : '' }} {{ props.field.parent ? 'o-eurooffice-list-field_children' : ''}}"
       role="treeitem"
       t-on-click.stop="() => this.toggleItem(props.field, true)"
       t-attf-data-tooltip="{{ props.isTechnicalName ? props.field.string : props.field.id }}"
@@ -18,8 +18,8 @@
           aria-label="Show sub-fields"
           title="Show sub-fields"
         />
-        <span t-if="props.isTechnicalName" class="o-eurooffice-field-title" t-esc="props.field.formattedId" />
-        <span t-else="" class="o-eurooffice-field-title" t-esc="props.field.formattedString" />
+        <span t-if="props.isTechnicalName" class="o-eurooffice-field-title text-900" t-esc="props.field.formattedId" />
+        <span t-else="" class="o-eurooffice-field-title text-900" t-esc="props.field.formattedString" />
         <!--<span
           t-if="props.field.field_type === 'binary'"
           title="Image"

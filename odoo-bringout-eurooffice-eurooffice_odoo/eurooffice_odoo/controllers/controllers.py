@@ -5,7 +5,6 @@
 import base64
 import json
 import logging
-import os
 import re
 import string
 import time
@@ -16,7 +15,7 @@ import markupsafe
 import requests
 from werkzeug.exceptions import Forbidden
 
-from odoo import _, http
+from odoo import _, fields, http
 from odoo.exceptions import AccessError, UserError
 from odoo.http import request
 
@@ -90,7 +89,7 @@ def eurooffice_request(url, method, opts=None):
         ) from e
 
 
-class Eurooffice_Connector(http.Controller):
+class Onlyoffice_Connector(http.Controller):
     @http.route("/eurooffice/editor/get_config", auth="user", methods=["POST"], type="json", csrf=False)
     def get_config(self, document_id=None, attachment_id=None, access_token=None):
         _logger.info("POST /eurooffice/editor/get_config - document: %s, attachment: %s", document_id, attachment_id)
@@ -104,7 +103,7 @@ class Eurooffice_Connector(http.Controller):
             _logger.warning("POST /eurooffice/editor/get_config - attachment not found: %s", attachment_id)
             return request.not_found()
 
-        attachment.validate_access(access_token)
+        attachment._can_return_content(access_token=access_token)
 
         if attachment.res_model == "documents.document" and not document:
             document = request.env["documents.document"].browse(int(attachment.res_id))
@@ -147,8 +146,8 @@ class Eurooffice_Connector(http.Controller):
             _logger.warning("GET /eurooffice/file/content/%s - attachment not found", attachment_id)
             return request.not_found()
 
-        attachment.validate_access(access_token)
-        attachment.check_access_rights("read")
+        attachment._can_return_content(access_token=access_token)
+        attachment.has_access("read")
 
         if jwt_utils.is_jwt_enabled(request.env):
             token = request.httprequest.headers.get(config_utils.get_jwt_header(request.env))
@@ -176,7 +175,7 @@ class Eurooffice_Connector(http.Controller):
             _logger.warning("GET /eurooffice/editor/%s - attachment not found", attachment_id)
             return request.not_found()
 
-        attachment.validate_access(access_token)
+        attachment._can_return_content(access_token=access_token)
 
         if attachment.res_model == "documents.document":
             document = request.env["documents.document"].browse(int(attachment.res_id))
@@ -185,8 +184,8 @@ class Eurooffice_Connector(http.Controller):
         data = attachment.read(["id", "checksum", "public", "name", "access_token"])[0]
         filename = data["name"]
 
-        can_read = attachment.check_access_rights("read", raise_exception=False) and file_utils.can_view(filename)
-        can_write = attachment.check_access_rights("write", raise_exception=False) and file_utils.can_edit(filename)
+        can_read = attachment.has_access("read") and file_utils.can_view(filename)
+        can_write = attachment.has_access("write") and file_utils.can_edit(filename)
 
         if not can_read:
             _logger.warning("GET /eurooffice/editor/%s - no read access", attachment_id)
@@ -212,8 +211,8 @@ class Eurooffice_Connector(http.Controller):
                 _logger.warning("POST /eurooffice/editor/callback/%s - attachment not found", attachment_id)
                 raise Exception("attachment not found")
 
-            attachment.validate_access(access_token)
-            attachment.check_access_rights("write")
+            attachment._can_return_content(access_token=access_token)
+            attachment.has_access("write")
 
             if jwt_utils.is_jwt_enabled(request.env):
                 token = body.get("token")
@@ -240,6 +239,7 @@ class Eurooffice_Connector(http.Controller):
                 if attachment.res_model == "documents.document":
                     datas = base64.encodebytes(datas)
                     document = request.env["documents.document"].browse(int(attachment.res_id))
+
                     document.with_user(user).write(
                         {
                             "name": attachment.name,
@@ -248,24 +248,7 @@ class Eurooffice_Connector(http.Controller):
                         }
                     )
 
-                    attachment_version = attachment.oo_attachment_version
-                    attachment.write({"oo_attachment_version": attachment_version + 1})
-                    previous_attachments = (
-                        request.env["ir.attachment"]
-                        .sudo()
-                        .search(
-                            [
-                                ("res_model", "=", "documents.document"),
-                                ("res_id", "=", document.id),
-                                ("oo_attachment_version", "=", attachment_version),
-                            ],
-                            limit=1,
-                        )
-                    )
-                    name = attachment.name
-                    filename, ext = os.path.splitext(attachment.name)
-                    name = f"{filename} ({attachment_version}){ext}"
-                    previous_attachments.sudo().write({"name": name})
+                    document.sudo().message_post(body=_("Document edited by %(user)s", user=user.name))
                 else:
                     attachment.write({"raw": datas, "mimetype": guess_type(file_url)[0]})
 
@@ -353,25 +336,32 @@ class Eurooffice_Connector(http.Controller):
         role = None
         document = request.env["documents.document"].browse(int(attachment.res_id))
 
+        now = fields.Datetime.now()
+        document_access_id = document.access_ids.filtered(lambda a: a.partner_id == request.env.user.partner_id)
+        expired_timer = False
+        if document_access_id and document_access_id.exists():
+            if document_access_id.expiration_date:
+                expired_timer = document_access_id.expiration_date < now
+
         if document.attachment_id.id != attachment.id:  # history files
             root_config["editorConfig"]["mode"] = "view"
             root_config["document"]["permissions"]["edit"] = False
             return root_config
 
-        if document.owner_id.id == request.env.user.id:
+        if document.owner_id.id == request.env.user.id:  # owner
             if can_write:
-                role = "editor"
+                role = "edit"
             else:
-                role = "viewer"
+                role = "view"
         else:
             access_user = request.env["eurooffice.odoo.documents.access.user"].search(
-                [("document_id", "=", document.id), ("user_id", "=", request.env.user.id)], limit=1
+                [("document_id", "=", document.id), ("user_id", "=", request.env.user.partner_id.id)], limit=1
             )
-            if access_user:
+            if access_user and not expired_timer:
                 if access_user.role == "none":
                     raise AccessError(_("User has no read access rights to open this document"))
-                elif access_user.role == "editor" and can_write:
-                    role = "editor"
+                elif access_user.role == "edit" and can_write:
+                    role = "edit"
                 else:
                     role = access_user.role
             if not role:
@@ -381,16 +371,16 @@ class Eurooffice_Connector(http.Controller):
                 if access:
                     if access.internal_users == "none":
                         raise AccessError(_("User has no read access rights to open this document"))
-                    elif access.internal_users == "editor" and can_write:
-                        role = "editor"
+                    elif access.internal_users == "edit" and can_write:
+                        role = "edit"
                     else:
                         role = access.internal_users
                 else:
-                    role = "viewer"  # default role for internal users
+                    role = "view"  # default role for internal users
 
         if not role:
             raise AccessError(_("User has no read access rights to open this document"))
-        elif role == "viewer":
+        elif role == "view":
             root_config["editorConfig"]["mode"] = "view"
             root_config["document"]["permissions"]["edit"] = False
         elif role == "commenter":
@@ -401,7 +391,7 @@ class Eurooffice_Connector(http.Controller):
             root_config["editorConfig"]["mode"] = "edit"
             root_config["document"]["permissions"]["edit"] = False
             root_config["document"]["permissions"]["review"] = True
-        elif role == "editor":
+        elif role == "edit":
             root_config["editorConfig"]["mode"] = "edit"
             root_config["document"]["permissions"]["edit"] = True
         elif role == "form_filling":
@@ -444,7 +434,7 @@ class Eurooffice_Connector(http.Controller):
         return text
 
     def _check_document_access(self, document):
-        if document.is_locked and document.lock_uid.id != request.env.user.id:
+        if document.lock_uid and document.lock_uid.id != request.env.user.id:
             _logger.error("Document is locked by another user")
             raise Forbidden()
         try:
@@ -507,7 +497,7 @@ class Eurooffice_Connector(http.Controller):
         )
 
 
-class EuroOfficeOFormsDocumentsController(http.Controller):
+class OnlyOfficeOFormsDocumentsController(http.Controller):
     CMSOFORMS_URL = "https://cmsoforms.eurooffice.com/api"
     OFORMS_URL = "https://oforms.eurooffice.com/dashboard/api"
     TIMEOUT = 20  # seconds

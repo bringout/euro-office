@@ -4,18 +4,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0-20221116\n"
+"Project-Id-Version: Odoo Server 18.0+e-20250520\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-03 08:14+0000\n"
-"PO-Revision-Date: 2025-10-01 19:03+0300\n"
+"POT-Creation-Date: 2025-11-12 16:18+0000\n"
+"PO-Revision-Date: 2025-11-12 16:18+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.1\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);"
 
 #. module: eurooffice_odoo
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
@@ -30,85 +28,42 @@ msgstr "<i class=\"fa fa-arrow-right\"/> Sugerir um recurso"
 #. module: eurooffice_odoo
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
 msgid ""
-"<span class=\"o_form_label\">\n"
-"                    About\n"
+"<span searchabletext=\"Connect to demo Euro-Office Docs server\">\n"
+"                    Connect to demo Euro-Office Docs server\n"
 "                  </span>"
 msgstr ""
-"<span class=\"o_form_label\">\n"
-"                    Sobre\n"
+"<span searchabletext=\"Conecte-se ao servidor de demonstração do Euro-Office Docs\">\n"
+"                    Conecte-se ao servidor de demonstração do Euro-Office Docs\n"
 "                  </span>"
 
 #. module: eurooffice_odoo
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
 msgid ""
-"<span class=\"o_form_label\">\n"
-"                    JWT Header\n"
-"                  </span>"
+"<span searchabletext=\"This is a public test server, please do not use it for private sensitive data. The server will be available during a 30-day period.\">\n"
+"                      This is a public test server, please do not use it for private sensitive data.\n"
+"                      The server will be available during a 30-day period.\n"
+"                    </span>"
 msgstr ""
-"<span class=\"o_form_label\">\n"
-"                    Cabeçalho JWT\n"
-"                  </span>"
+"<span searchabletext=\"Este é um servidor de teste público, por favor, não o use para dados confidenciais. O servidor estará disponível durante um período de 30 dias.\">\n"
+"                      Este é um servidor de teste público, por favor, não o use para dados confidenciais. O servidor estará disponível durante um período de 30 dias.\n"
+"                    </span>"
 
 #. module: eurooffice_odoo
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
-msgid ""
-"<span class=\"o_form_label\">\n"
-"                    Euro-Office Docs address for internal requests from the "
-"server\n"
-"                  </span>"
-msgstr ""
-"<span class=\"o_form_label\">\n"
-"                    Endereço do Euro-Office Docs para solicitações internas "
-"do servidor\n"
-"                  </span>"
-
-#. module: eurooffice_odoo
-#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
-msgid ""
-"<span class=\"o_form_label\">\n"
-"                    Euro-Office Docs secret key\n"
-"                  </span>"
-msgstr ""
-"<span class=\"o_form_label\">\n"
-"                    Chave secreta do Euro-Office Docs\n"
-"                  </span>"
-
-#. module: eurooffice_odoo
-#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
-msgid ""
-"<span class=\"o_form_label\">\n"
-"                    Server address for internal requests from Euro-Office "
-"Docs\n"
-"                  </span>"
-msgstr ""
-"<span class=\"o_form_label\">\n"
-"                    Endereço do servidor para solicitações internas do "
-"Euro-Office Docs\n"
-"                  </span>"
-
-#. module: eurooffice_odoo
-#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
-msgid "<span class=\"o_form_label\">Euro-Office Docs address</span>"
-msgstr "<span class=\"o_form_label\">Endereço do Euro-Office Docs</span>"
+msgid "About"
+msgstr "Sobre"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "Back"
 msgstr "Voltar"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "Categories"
 msgstr "Categorias"
-
-#. module: eurooffice_odoo
-#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
-msgid "Common settings"
-msgstr "Configurações comuns"
 
 #. module: eurooffice_odoo
 #: model:ir.model,name:eurooffice_odoo.model_res_config_settings
@@ -117,14 +72,12 @@ msgstr "Configurações de configuração"
 
 #. module: eurooffice_odoo
 #: model:ir.model.fields,field_description:eurooffice_odoo.field_res_config_settings__doc_server_demo
-#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
 msgid "Connect to demo Euro-Office Docs server"
 msgstr "Conecte-se ao servidor de demonstração do Euro-Office Docs"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "Create"
 msgstr "Criar"
 
@@ -152,7 +105,6 @@ msgstr "Nome de exibição"
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "Document"
 msgstr "Documento"
 
@@ -177,37 +129,38 @@ msgid "Document Server Public URL"
 msgstr "URL pública do servidor de documentos"
 
 #. module: eurooffice_odoo
+#. odoo-python
+#: code:addons/eurooffice_odoo/controllers/controllers.py:0
+msgid "Document edited by %(user)s"
+msgstr ""
+
+#. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.js:0
-#, python-format
 msgid "Document templates"
 msgstr "Modelos de documento"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.js:0
-#, python-format
 msgid "Error loading forms"
 msgstr "Erro ao carregar formulários"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.js:0
-#, python-format
 msgid "Failed to load categories"
 msgstr "Falha ao carregar categorias"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.js:0
-#, python-format
 msgid "Failed to load forms"
 msgstr "Falha ao carregar formulários"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "Form"
 msgstr "Formulário"
 
@@ -232,16 +185,15 @@ msgid "Internal JWT Secret"
 msgstr "Segredo JWT Interno"
 
 #. module: eurooffice_odoo
-#. odoo-javascript
-#: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
-msgid "Language"
-msgstr "Idioma"
+#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
+msgid "JWT Header"
+msgstr "Cabeçalho JWT"
 
 #. module: eurooffice_odoo
-#: model:ir.model.fields,field_description:eurooffice_odoo.field_eurooffice_odoo____last_update
-msgid "Last Modified on"
-msgstr "Última modificação em"
+#. odoo-javascript
+#: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
+msgid "Language"
+msgstr "Idioma"
 
 #. module: eurooffice_odoo
 #: model:ir.model.fields,field_description:eurooffice_odoo.field_eurooffice_odoo__write_uid
@@ -256,26 +208,39 @@ msgstr "Última atualização em"
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "Loading forms..."
 msgstr "Carregando formulários..."
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "No forms found"
 msgstr "Nenhum formulário encontrado"
 
 #. module: eurooffice_odoo
+#: model:ir.model,name:eurooffice_odoo.model_eurooffice_odoo
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
 msgid "Euro-Office"
 msgstr "Euro-Office"
 
 #. module: eurooffice_odoo
+#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
+msgid "Euro-Office Docs address"
+msgstr "Endereço do Euro-Office Docs"
+
+#. module: eurooffice_odoo
+#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
+msgid "Euro-Office Docs address for internal requests from the server"
+msgstr "Endereço do Euro-Office Docs para solicitações internas do servidor"
+
+#. module: eurooffice_odoo
+#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
+msgid "Euro-Office Docs secret key"
+msgstr "Chave secreta do Euro-Office Docs"
+
+#. module: eurooffice_odoo
 #. odoo-javascript
-#: code:addons/eurooffice_odoo/static/src/models/attachment_eurooffice.js:0
-#, python-format
+#: code:addons/eurooffice_odoo/static/src/models/attachment_card_onlyoffice.js:0
 msgid "Euro-Office Docs server"
 msgstr "Servidor Euro-Office Docs"
 
@@ -285,18 +250,18 @@ msgid ""
 "Euro-Office Templates requires a properly licensed Document Server connected "
 "with Odoo. Contact sales at sales@eurooffice.com to acquire the proper "
 "license."
-msgstr ""
-"Os Modelos do Euro-Office requerem um Servidor de Documentos devidamente "
-"licenciado e conectado ao Odoo. Entre em contato com o departamento de "
-"vendas pelo e-mail sales@eurooffice.com para adquirir a licença adequada."
+msgstr "Os Modelos do Euro-Office requerem um Servidor de Documentos devidamente licenciado e conectado ao Odoo. Entre em contato com o departamento de vendas pelo e-mail sales@eurooffice.com para adquirir a licença adequada."
 
 #. module: eurooffice_odoo
+#. odoo-javascript
+#: code:addons/eurooffice_odoo/static/src/actions/documents_action.xml:0
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo.eurooffice_editor
 msgid "Euro-Office cannot be reached. Please contact admin."
-msgstr ""
-"Euro-Office não pode ser alcançado. Entre em contato com o administrador."
+msgstr "Euro-Office não pode ser alcançado. Entre em contato com o administrador."
 
 #. module: eurooffice_odoo
+#. odoo-javascript
+#: code:addons/eurooffice_odoo/static/src/actions/documents_action.xml:0
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo.eurooffice_editor
 msgid "Euro-Office logo"
 msgstr "Logotipo Euro-Office"
@@ -307,12 +272,6 @@ msgid "Odoo URL"
 msgstr "URL Odoo"
 
 #. module: eurooffice_odoo
-#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
-msgid "Only use when accessing Document Server with a self-signed certificate"
-msgstr ""
-"Usar somente ao acessar o Document Server com um certificado autoassinado"
-
-#. module: eurooffice_odoo
 #: model:ir.model.fields,field_description:eurooffice_odoo.field_res_config_settings__same_tab
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
 msgid "Open file in the same tab"
@@ -320,31 +279,37 @@ msgstr "Abra o arquivo na mesma aba."
 
 #. module: eurooffice_odoo
 #. odoo-javascript
-#: code:addons/eurooffice_odoo/static/src/components/attachment_card_eurooffice/attachment_card_eurooffice.xml:0
-#, python-format
+#: code:addons/eurooffice_odoo/static/src/components/attachment_card_onlyoffice/attachment_card_onlyoffice.xml:0
 msgid "Open in Euro-Office"
 msgstr "Abrir no Euro-Office"
 
 #. module: eurooffice_odoo
+#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
+msgid "Other"
+msgstr ""
+
+#. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "Presentation"
 msgstr "Apresentação"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "Search..."
 msgstr "Pesquisar..."
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "Select document"
 msgstr "Selecionar documento"
+
+#. module: eurooffice_odoo
+#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
+msgid "Server address for internal requests from Euro-Office Docs"
+msgstr "Endereço do servidor para solicitações internas do Euro-Office Docs"
 
 #. module: eurooffice_odoo
 #: model:ir.actions.act_window,name:eurooffice_odoo.action_eurooffice_config_settings
@@ -354,66 +319,45 @@ msgstr "Configurações"
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "Spreadsheet"
 msgstr "Planilha"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
-#: code:addons/eurooffice_odoo/static/src/models/attachment_eurooffice.js:0
-#, python-format
+#: code:addons/eurooffice_odoo/static/src/models/attachment_card_onlyoffice.js:0
 msgid ""
-"The 30-day test period is over, you can no longer connect to demo Euro-Office "
-"Docs server"
-msgstr ""
-"O período de teste de 30 dias acabou, você não pode mais se conectar ao "
-"Euro-Office de demonstração Servidor Docs"
+"The 30-day test period is over, you can no longer connect to demo Euro-Office"
+" Docs server"
+msgstr "O período de teste de 30 dias acabou, você não pode mais se conectar ao Euro-Office de demonstração Servidor Docs"
 
 #. module: eurooffice_odoo
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
 msgid ""
 "This app enables creating, editing, and collaborating on fillable forms, "
 "office files, and attached documents in Odoo using Euro-Office Docs."
-msgstr ""
-"Este aplicativo permite criar, editar e colaborar em formulários "
-"preenchíveis, arquivos do Office e documentos anexados no Odoo usando o "
-"Euro-Office Docs."
-
-#. module: eurooffice_odoo
-#: model_terms:ir.ui.view,arch_db:eurooffice_odoo.res_config_settings_view_form
-msgid ""
-"This is a public test server, please do not use it for private sensitive "
-"data. The server will be available during a 30-day period."
-msgstr ""
-"Este é um servidor de teste público, por favor, não o use para dados "
-"confidenciais. O servidor estará disponível durante um período de 30 dias."
+msgstr "Este aplicativo permite criar, editar e colaborar em formulários preenchíveis, arquivos do Office e documentos anexados no Odoo usando o Euro-Office Docs."
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "Try changing your search or filters"
 msgstr "Tente alterar sua pesquisa ou filtros"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "Type"
 msgstr "Tipo"
 
 #. module: eurooffice_odoo
 #. odoo-python
 #: code:addons/eurooffice_odoo/controllers/controllers.py:0
-#, python-format
 msgid "User has no read access rights to open this document"
-msgstr ""
-"O usuário não tem direitos de acesso de leitura para abrir este documento"
+msgstr "O usuário não tem direitos de acesso de leitura para abrir este documento"
 
 #. module: eurooffice_odoo
 #. odoo-javascript
 #: code:addons/eurooffice_odoo/static/src/views/form_gallery/form_gallery.xml:0
-#, python-format
 msgid "View all templates"
 msgstr "Ver todos os modelos"
 

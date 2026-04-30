@@ -1,9 +1,10 @@
 /** @odoo-module **/
-import { EuroofficePreview } from "@eurooffice_odoo/views/preview/eurooffice_preview"
+import { OnlyofficePreview } from "@eurooffice_odoo/views/preview/eurooffice_preview"
 import { Dialog } from "@web/core/dialog/dialog"
 import { Dropdown } from "@web/core/dropdown/dropdown"
 import { DropdownItem } from "@web/core/dropdown/dropdown_item"
 import { _t } from "@web/core/l10n/translation"
+import { rpc } from "@web/core/network/rpc"
 import { Pager } from "@web/core/pager/pager"
 import { useService } from "@web/core/utils/hooks"
 
@@ -23,7 +24,7 @@ export class FormGallery extends Component {
     this.title = _t("Document templates")
     this.action = useService("action")
     this.notification = useService("notification")
-    this.rpc = useService("rpc")
+    this.rpc = rpc
     this.orm = useService("orm")
 
     this.searchTimeout = null
@@ -238,7 +239,7 @@ export class FormGallery extends Component {
 
   previewForm(url, title, ext) {
     this.env.services.dialog.add(
-      EuroofficePreview,
+      OnlyofficePreview,
       {
         close: () => {
           this.env.services.dialog.close()

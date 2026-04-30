@@ -8,9 +8,10 @@
     "author": "Euro-Office",
     "website": "https://github.com/Euro-Office/eurooffice_odoo",
     "category": "Productivity",
-    "version": "19.0.3.3.0",
+    "version": "19.0.6.3.0",
     "depends": ["base", "mail"],
     "external_dependencies": {"python": ["pyjwt"]},
+    # always loaded
     "data": [
         "views/templates.xml",
         "views/res_config_settings_views.xml",
@@ -27,12 +28,10 @@
     "installable": True,
     "application": True,
     "assets": {
-        "mail.assets_messaging": [
-            "eurooffice_odoo/static/src/models/*.js",
-        ],
         "web.assets_backend": [
             "eurooffice_odoo/static/src/actions/*",
             "eurooffice_odoo/static/src/components/*/*.xml",
+            "eurooffice_odoo/static/src/models/*.js",
             "eurooffice_odoo/static/src/views/**/*",
             "eurooffice_odoo/static/src/css/*",
         ],

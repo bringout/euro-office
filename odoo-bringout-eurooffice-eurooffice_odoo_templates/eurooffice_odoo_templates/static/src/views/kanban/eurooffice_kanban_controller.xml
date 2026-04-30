@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates>
-  <t
-    t-name="eurooffice_odoo_templates.EuroofficeKanbanController.Buttons"
-    t-inherit="web.KanbanView.Buttons"
-    t-inherit-mode="primary"
-    owl="1"
-  >
-    <xpath expr="//button[hasclass('o-kanban-button-new')]" position="replace">
-      <button
-        type="button"
-        class="btn btn-primary o-kanban-button-new"
-        accesskey="c"
-        t-on-click="() => this.createRecord(null)"
-        data-bounce-button=""
-        groups="eurooffice_odoo_templates.group_manager"
-      >
-        Create or Upload
-      </button>
-    </xpath>
-    <xpath expr="//div[hasclass('o_cp_buttons')]" position="inside">
+  <t t-name="eurooffice_odoo_templates.KanbanView.Buttons" t-inherit="web.KanbanView" t-inherit-mode="primary">
+    <xpath expr="//button[hasclass('o-kanban-button-new')]" position="after">
       <button class="btn btn-secondary ms-1" t-on-click="() => this.openFormGallery()" style="text-wrap: nowrap;">
         Open Document templates
       </button>

@@ -1,21 +1,23 @@
 /** @odoo-module **/
-import { EuroofficePreview } from "@eurooffice_odoo/views/preview/eurooffice_preview"
+import { OnlyofficePreview } from "@eurooffice_odoo/views/preview/eurooffice_preview"
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog"
 import { Dialog } from "@web/core/dialog/dialog"
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook"
+import { _t } from "@web/core/l10n/translation"
 import { download } from "@web/core/network/download"
+import { rpc } from "@web/core/network/rpc"
 import { Pager } from "@web/core/pager/pager"
+import { KeepLast } from "@web/core/utils/concurrency"
 import { useService } from "@web/core/utils/hooks"
 import { SearchModel } from "@web/search/search_model"
 import { getDefaultConfig } from "@web/views/view"
-import { DropPrevious } from "web.concurrency"
 
 const { Component, useState, useSubEnv, useChildSubEnv, onWillStart } = owl
 
 export class TemplateDialog extends Component {
   setup() {
     this.orm = useService("orm")
-    this.rpc = useService("rpc")
+    this.rpc = rpc
     this.viewService = useService("view")
     this.notificationService = useService("notification")
     this.dialog = useService("dialog")
@@ -23,7 +25,7 @@ export class TemplateDialog extends Component {
     this.data = this.env.dialogData
     useHotkey("escape", () => this.data.close())
 
-    this.dialogTitle = this.env._t("Print from template")
+    this.dialogTitle = _t("Print from template")
     this.limit = 8
     this.state = useState({
       currentOffset: 0,
@@ -38,13 +40,12 @@ export class TemplateDialog extends Component {
 
     this.model = new SearchModel(this.env, {
       orm: this.orm,
-      user: useService("user"),
       view: useService("view"),
     })
 
     useChildSubEnv({ searchModel: this.model })
 
-    this.dp = new DropPrevious()
+    this.dp = new KeepLast()
 
     onWillStart(async () => {
       const { resModel } = this.props
@@ -73,20 +74,22 @@ export class TemplateDialog extends Component {
 
   async fetchTemplates(offset = 0) {
     const { domain, context } = this.model
-    const { records, length } = await this.dp.add(
-      this.rpc("/web/dataset/search_read", {
+    const records = await this.orm.searchRead(
+      "eurooffice.odoo.templates",
+      domain,
+      ["display_name", "name", "create_date", "create_uid", "attachment_id", "mimetype"],
+      {
         context,
-        domain,
-        fields: ["display_name", "name", "create_date", "create_uid", "attachment_id", "mimetype"],
         limit: this.limit,
-        model: "eurooffice.odoo.templates",
         offset,
-        sort: "id",
-      }),
+        order: "id",
+      },
     )
+    this.state.templates = records
+    const length = await this.orm.searchCount("eurooffice.odoo.templates", domain, { context })
     if (!length) {
       this.dialog.add(AlertDialog, {
-        body: this.env._t(
+        body: _t(
           // eslint-disable-next-line @stylistic/max-len
           "You don't have any templates yet. Please go to the Euro-Office Templates app to create a new template or ask your admin to create it.",
         ),
@@ -94,7 +97,6 @@ export class TemplateDialog extends Component {
       })
       return this.data.close()
     }
-    this.state.templates = records
     this.state.totalTemplates = length
   }
 
@@ -146,7 +148,7 @@ export class TemplateDialog extends Component {
     const url = `/eurooffice/file/content/${t.attachment_id[0]}`
 
     this.env.services.dialog.add(
-      EuroofficePreview,
+      OnlyofficePreview,
       {
         close: () => {
           this.env.services.dialog.close()

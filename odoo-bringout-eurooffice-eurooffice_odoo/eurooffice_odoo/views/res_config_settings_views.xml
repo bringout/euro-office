@@ -9,168 +9,101 @@
     <field name="priority" eval="10" />
     <field name="inherit_id" ref="base.res_config_settings_view_form" />
     <field name="arch" type="xml">
-      <xpath expr="//div[hasclass('settings')]" position="inside">
-        <div class="app_settings_block" string="Euro-Office" data-string="Euro-Office" data-key="eurooffice_odoo">
-          <div>
-            <h2>Welcome to Euro-Office!</h2>
-            <div class="row mt16 o_settings_container">
-              <div class="col-12 col-lg-6 o_setting_box">
-                <div class="o_setting_left_pane" />
-                <div class="o_setting_right_pane">
-                  <span class="o_form_label">
-                    About
-                  </span>
-                  <div class="text-muted" style="text-wrap: nowrap;">
-                    This app enables creating, editing, and collaborating on fillable forms, office files, and attached documents in Odoo using Euro-Office Docs.
-                  </div>
-                  <div>
-                    <a class="oe_link" href="https://helpcenter.eurooffice.com/integration/odoo.aspx" target="_blank">
-                      <i class="fa fa-arrow-right" /> Learn more </a>
-                    <br />
-                    <a
-                      class="oe_link"
-                      href="https://feedback.eurooffice.com/forums/966080-your-voice-matters?category_id=519288"
-                      target="_blank"
-                    >
-                      <i class="fa fa-arrow-right" /> Suggest a feature </a>
-                  </div>
-                </div>
+      <xpath expr="//form" position="inside">
+        <app data-string="Euro-Office" string="Euro-Office" name="eurooffice_odoo" groups="base.group_system">
+          <block title="About">
+            <setting
+              string="Welcome to Euro-Office!"
+              help="This app enables creating, editing, and collaborating on fillable forms, office files, and attached documents in Odoo using Euro-Office Docs."
+            >
+              <a
+                href="https://api.eurooffice.com/docs/docs-api/get-started/ready-to-use-connectors/odoo-integration/"
+                target="_blank"
+              >
+                <i class="fa fa-arrow-right" /> Learn more </a>
+              <br />
+              <a
+                href="https://feedback.eurooffice.com/forums/966080-your-voice-matters?category_id=519288"
+                target="_blank"
+              >
+                <i class="fa fa-arrow-right" /> Suggest a feature </a>
+            </setting>
+          </block>
+          <block title="General Settings" name="eurooffice_odoo">
+            <setting string="Euro-Office Docs address">
+              <field name="doc_server_public_url" />
+            </setting>
+            <br />
+            <setting string="Disable certificate verification">
+              <field name="doc_server_disable_certificate" />
+            </setting>
+            <br />
+            <setting string="Euro-Office Docs secret key">
+              <field name="doc_server_jwt_secret" password="True" />
+            </setting>
+            <br />
+            <setting string="JWT Header">
+              <field name="doc_server_jwt_header" />
+            </setting>
+            <br />
+            <setting string="Euro-Office Docs address for internal requests from the server">
+              <field name="doc_server_odoo_url" />
+            </setting>
+            <br />
+            <setting string="Server address for internal requests from Euro-Office Docs">
+              <field name="doc_server_inner_url" />
+            </setting>
+            <br />
+            <div class="o_setting_box col-12 col-lg-6 o_searchable_setting">
+              <div class="o_setting_left_pane">
+                <field name="doc_server_demo" />
               </div>
-            </div>
-          </div>
-          <div>
-            <h2>General Settings</h2>
-            <div class="row mt16 o_settings_container">
-              <div class="col-12 col-lg-6 o_setting_box">
-                <div class="o_setting_left_pane" />
-                <div class="o_setting_right_pane">
-                  <span class="o_form_label">Euro-Office Docs address</span>
-                  <div class="text-muted content-group mt16">
-                    <field name="doc_server_public_url" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt16 o_settings_container">
-              <div class="col-12 col-lg-6 o_setting_box">
-                <div class="o_setting_left_pane">
-                  <field name="doc_server_disable_certificate" />
-                </div>
-                <div class="o_setting_right_pane">
-                  <label class="o_form_label" for="doc_server_disable_certificate">
-                    Disable certificate verification
-                  </label>
-                  <div class="text-muted">
-                    Only use when accessing Document Server with a self-signed certificate
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt16 o_settings_container">
-              <div class="col-12 col-lg-6 o_setting_box">
-                <div class="o_setting_left_pane" />
-                <div class="o_setting_right_pane">
-                  <span class="o_form_label">
-                    Euro-Office Docs secret key
-                  </span>
-                  <div class="text-muted content-group mt16">
-                    <field name="doc_server_jwt_secret" password="True" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt16 o_settings_container">
-              <div class="col-12 col-lg-6 o_setting_box">
-                <div class="o_setting_left_pane" />
-                <div class="o_setting_right_pane">
-                  <span class="o_form_label">
-                    JWT Header
-                  </span>
-                  <div class="text-muted content-group mt16">
-                    <field name="doc_server_jwt_header" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt16 o_settings_container">
-              <div class="col-12 col-lg-6 o_setting_box">
-                <div class="o_setting_left_pane" />
-                <div class="o_setting_right_pane">
-                  <span class="o_form_label">
-                    Euro-Office Docs address for internal requests from the server
-                  </span>
-                  <div class="text-muted content-group mt16">
-                    <field name="doc_server_odoo_url" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt16 o_settings_container">
-              <div class="col-12 col-lg-6 o_setting_box">
-                <div class="o_setting_left_pane" />
-                <div class="o_setting_right_pane">
-                  <span class="o_form_label">
-                    Server address for internal requests from Euro-Office Docs
-                  </span>
-                  <div class="text-muted content-group mt16">
-                    <field name="doc_server_inner_url" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt16 o_settings_container">
-              <div class="col-12 col-lg-6 o_setting_box">
-                <div class="o_setting_left_pane">
-                  <field name="doc_server_demo" />
-                </div>
-                <div class="o_setting_right_pane">
-                  <label class="o_form_label" for="doc_server_demo">
+              <div class="o_setting_right_pane">
+                <label class="o_form_label me-2" for="doc_server_demo">
+                  <span searchabletext="Connect to demo Euro-Office Docs server">
                     Connect to demo Euro-Office Docs server
-                  </label>
+                  </span>
+                </label>
+                <div class="o_widget o_widget_documentation_link d-inline">
                   <a
                     title="Euro-Office Templates requires a properly licensed Document Server connected with Odoo. Contact sales at sales@eurooffice.com to acquire the proper license."
                     class="o_doc_link"
-                  />
+                  >
+                    <i class="fa fa-question-circle" />
+                    <span />
+                  </a>
+                </div>
+                <div class="mt16">
                   <div class="text-muted">
-                    This is a public test server, please do not use it for private sensitive data.
-                    The server will be available during a 30-day period.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt16 o_settings_container">
-              <div class="col-12 col-lg-6 o_setting_box">
-                <div class="o_setting_left_pane" />
-                <div class="o_setting_right_pane eurooffice_link_pane">
-                  <div class="eurooffice_link_container">
-                    <a
-                      class="eurooffice_link_button"
-                      href="https://www.eurooffice.com/docs-registration.aspx"
-                      target="_blank"
+                    <span
+                      searchabletext="This is a public test server, please do not use it for private sensitive data. The server will be available during a 30-day period."
                     >
-                      GET NOW
-                    </a>
+                      This is a public test server, please do not use it for private sensitive data.
+                      The server will be available during a 30-day period.
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="o_eurooffice_settings_common">
-            <h2>Common settings</h2>
-            <div class="row mt16 o_settings_container">
-              <div class="col-12 col-lg-6 o_setting_box">
-                <div class="o_setting_left_pane">
-                  <field name="same_tab" />
-                </div>
-                <div class="o_setting_right_pane">
-                  <label class="o_form_label" for="same_tab">
-                    Open file in the same tab
-                  </label>
-                </div>
+            <br />
+            <setting>
+              <div class="eurooffice_link_container">
+                <a
+                  class="eurooffice_link_button"
+                  href="https://www.eurooffice.com/docs-registration.aspx"
+                  target="_blank"
+                >
+                  GET NOW
+                </a>
               </div>
-            </div>
-          </div>
-        </div>
+            </setting>
+          </block>
+          <block title="Other" name="eurooffice_odoo" id="o_eurooffice_settings_common">
+            <setting string="Open file in the same tab">
+              <field name="same_tab" />
+            </setting>
+          </block>
+        </app>
       </xpath>
     </field>
   </record>
@@ -181,7 +114,7 @@
     <field name="res_model">res.config.settings</field>
     <field name="view_id" ref="res_config_settings_view_form" />
     <field name="view_mode">form</field>
-    <field name="target">inline</field>
+    <field name="target">current</field>
     <field name="context">{'module' : 'eurooffice_odoo'}</field>
   </record>
 </odoo>

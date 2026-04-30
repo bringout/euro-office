@@ -4,7 +4,9 @@ import { useService } from "@web/core/utils/hooks"
 import { KanbanController } from "@web/views/kanban/kanban_controller"
 import { HelpDialog } from "./eurooffice_dialog_help"
 
-export class EuroofficeKanbanController extends KanbanController {
+export class OnlyofficeKanbanController extends KanbanController {
+  static template = "eurooffice_odoo_templates.KanbanView.Buttons"
+
   setup() {
     super.setup()
     this.action = useService("action")

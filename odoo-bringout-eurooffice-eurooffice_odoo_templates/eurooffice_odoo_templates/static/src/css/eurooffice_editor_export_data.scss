@@ -27,7 +27,6 @@
     .o-eurooffice-search-field {
       position: relative;
       padding: 0 !important;
-      border: 1px solid var(--gray-300) !important;
 
       .o-eurooffice-search-input {
         width: 100% !important;
@@ -38,6 +37,7 @@
         line-height: 16px;
         letter-spacing: 2%;
         vertical-align: middle;
+        border: none !important;
       }
 
       button {

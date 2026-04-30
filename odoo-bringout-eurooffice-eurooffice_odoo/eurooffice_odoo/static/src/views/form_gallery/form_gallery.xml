@@ -10,102 +10,88 @@
         </div>
         <div class="row mb-3 justify-content-end" t-if="!state.loading and !state.error">
           <div t-att-class="props.showType ? 'col-md-2' : 'col-md-3'">
-            <Dropdown class="'w-100'" togglerClass="'btn btn-light'">
-              <t t-set-slot="toggler">
-                <i class="me-1 fa fa-filter" />
-                <span class="o_dropdown_title">
-                  Categories
-                </span>
-              </t>
-              <span
-                class="dropdown-item o_menu_item"
-                t-on-click="() => this.onAllSubcategorySelect()"
-                tabindex="0"
-                aria-checked="false"
-              >
-                View all templates
-              </span>
-              <div role="separator" class="dropdown-divider" />
-              <t t-foreach="state.categories" t-as="category" t-key="category.id">
-                <Dropdown t-props="dropdownProps">
-                  <t t-set-slot="toggler">
-                    <t t-out="category.name" />
-                  </t>
-                  <t t-foreach="state.subcategories[category.categoryId]" t-as="subcat" t-key="subcat.id">
-                    <div class="dropdown-item o_menu_item" t-on-click="() => this.onSubcategorySelect(subcat)">
-                      <span t-esc="subcat.name" />
-                    </div>
-                  </t>
-                </Dropdown>
+            <Dropdown>
+              <button class="btn btn-light">
+                <i class="me-1 fa fa-filter me-1" />
+                <span class="o_dropdown_title">Categories</span>
+              </button>
+              <t t-set-slot="content">
+                <DropdownItem onSelected="() => this.onAllSubcategorySelect()">
+                    View all templates
+                </DropdownItem>
+                <div role="separator" class="dropdown-divider" />
+                <t t-foreach="state.categories" t-as="category" t-key="category.id">
+                  <Dropdown t-props="dropdownProps">
+                    <button class="btn btn-light">
+                      <span class="o_dropdown_title" t-out="category.name" />
+                    </button>
+                    <t t-set-slot="content">
+                      <t t-foreach="state.subcategories[category.categoryId]" t-as="subcat" t-key="subcat.id">
+                        <DropdownItem onSelected="() => this.onSubcategorySelect(subcat)">
+                          <span t-esc="subcat.name" />
+                        </DropdownItem>
+                      </t>
+                    </t>
+                  </Dropdown>
+                </t>
               </t>
             </Dropdown>
           </div>
           <t t-if="props.showType">
             <div class="col-md-2">
-              <Dropdown class="'w-100'" togglerClass="'btn btn-light'">
-                <t t-set-slot="toggler">
-                  <i class="me-1 fa fa-filter" />
-                  <span class="o_dropdown_title">
-                    Type
-                  </span>
+              <Dropdown>
+                <button class="btn btn-light">
+                  <i class="me-1 fa fa-filter me-1" />
+                  <span class="o_dropdown_title">Type</span>
+                </button>
+                <t t-set-slot="content">
+                  <DropdownItem onSelected="() => this.onChangeType('pdf')">
+                    Form
+                  </DropdownItem>
+                  <DropdownItem onSelected="() => this.onChangeType('docx')">
+                    Document
+                  </DropdownItem>
+                  <DropdownItem onSelected="() => this.onChangeType('xlsx')">
+                    Spreadsheet
+                  </DropdownItem>
+                  <DropdownItem onSelected="() => this.onChangeType('pptx')">
+                    Presentation
+                  </DropdownItem>
                 </t>
-                <span
-                  class="dropdown-item o_menu_item"
-                  t-on-click="() => this.onChangeType('pdf')"
-                  tabindex="0"
-                  aria-checked="false"
-                >
-                  Form
-                </span>
-                <span
-                  class="dropdown-item o_menu_item"
-                  t-on-click="() => this.onChangeType('docx')"
-                  tabindex="0"
-                  aria-checked="false"
-                >
-                  Document
-                </span>
-                <span
-                  class="dropdown-item o_menu_item"
-                  t-on-click="() => this.onChangeType('xlsx')"
-                  tabindex="0"
-                  aria-checked="false"
-                >
-                  Spreadsheet
-                </span>
-                <span
-                  class="dropdown-item o_menu_item"
-                  t-on-click="() => this.onChangeType('pptx')"
-                  tabindex="0"
-                  aria-checked="false"
-                >
-                  Presentation
-                </span>
               </Dropdown>
             </div>
           </t>
           <div t-att-class="props.showType ? 'col-md-2' : 'col-md-3'">
-            <Dropdown class="'w-100'" togglerClass="'btn btn-light'">
-              <t t-set-slot="toggler">
-                <i class="me-1 fa fa-language" />
-                <span>
-                  Language
-                </span>
-              </t>
-              <t t-foreach="state.locales" t-as="locale" t-key="locale.code">
-                <DropdownItem onSelected="() => this.onLocaleChange(locale)">
-                  <t t-esc="locale.name" />
-                </DropdownItem>
+            <Dropdown>
+              <button class="btn btn-light">
+                <i class="me-1 fa fa-language me-1" />
+                <span class="o_dropdown_title">Language</span>
+              </button>
+              <t t-set-slot="content">
+                <t t-foreach="state.locales" t-as="locale" t-key="locale.code">
+                  <DropdownItem onSelected="() => this.onLocaleChange(locale)">
+                    <t t-esc="locale.name" />
+                  </DropdownItem>
+                </t>
               </t>
             </Dropdown>
           </div>
           <div class="col-md-6">
-            <div class="o_searchview h-100" role="search" aria-autocomplete="list">
-              <i class="o_searchview_icon oi oi-search p-2" role="img" aria-label="Search..." title="Search..." />
-              <div class="o_searchview_input_container h-100">
+            <div
+              class="o_searchview form-control d-print-contents d-flex align-items-center py-1"
+              role="search"
+              aria-autocomplete="list"
+            >
+              <i
+                class="o_searchview_icon d-print-none oi oi-search me-2"
+                role="img"
+                aria-label="Search..."
+                title="Search..."
+              />
+              <div class="o_searchview_input_container d-flex flex-grow-1 flex-wrap gap-1">
                 <input
                   type="text"
-                  class="o_searchview_input"
+                  class="o_searchview_input o_input d-print-none flex-grow-1 w-auto border-0"
                   placeholder="Search..."
                   role="searchbox"
                   data-hotkey="Q"

@@ -5,7 +5,7 @@ from odoo import api, models
 from odoo.addons.eurooffice_odoo.utils import config_constants
 
 
-class EuroOfficeTemplate(models.Model):
+class OnlyOfficeTemplate(models.Model):
     _name = "eurooffice.odoo"
     _description = "Euro-Office"
 

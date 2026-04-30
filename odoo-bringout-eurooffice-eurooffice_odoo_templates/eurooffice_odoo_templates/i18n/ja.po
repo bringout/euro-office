@@ -4,52 +4,31 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e-20240216\n"
+"Project-Id-Version: Odoo Server 18.0+e-20250520\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-03 08:20+0000\n"
-"PO-Revision-Date: 2025-11-14 11:15+0300\n"
+"POT-Creation-Date: 2025-11-12 16:22+0000\n"
+"PO-Revision-Date: 2025-11-12 16:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.1\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
 msgid ""
-", select the desired Odoo module, and create or upload a PDF template with fillable "
-"fields."
+", select the desired Odoo module, and create or upload a PDF template with "
+"fillable fields."
 msgstr ""
 "必要なOdooモジュールを選択し、入力可能フィールド付きPDFテンプレートを作成またはアップロー"
 "ドしてください。"
 
 #. module: eurooffice_odoo_templates
-#: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.res_config_settings_view_form
-msgid ""
-"<span class=\"o_form_label\">\n"
-"                  Templates gallery\n"
-"                </span>"
-msgstr ""
-"<span class=\"o_form_label\">\n"
-"                  テンプレートギャラリー\n"
-"                </span>"
-
-#. module: eurooffice_odoo_templates
 #: model:res.groups,name:eurooffice_odoo_templates.group_eurooffice_odoo_templates_admin
 msgid "Administrator"
 msgstr "管理者"
-
-#. module: eurooffice_odoo_templates
-#. odoo-javascript
-#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_kanban_record.js:0
-#, python-format
-msgid "Are you sure you want to delete this record?"
-msgstr "本当にこのレコードを削除しますか？"
 
 #. module: eurooffice_odoo_templates
 #: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_templates__attachment_id
@@ -69,25 +48,22 @@ msgstr "Euro-Officeテンプレートを開き、作成、編集、印刷する�
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/dialog/eurooffice_dialog.xml:0
-#, python-format
+#: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_demo_templates_form
 msgid "Cancel"
 msgstr "キャンセル"
 
 #. module: eurooffice_odoo_templates
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_demo_templates_form
 msgid ""
-"Check templates you want to export to the Euro-Office Templates module and press Export. "
-"You can do this as many times as you need."
-msgstr ""
-"エクスポートしたいテンプレートを 「Euro-Officeテンプレート」モジュールで選択し、「エクス"
-"ポート」をクリックします。この操作は必要な回数だけ繰り返すことができます。"
+"Check templates you want to export to the Euro-Office Templates module and press Export.\n"
+"          You can do this as many times as you need."
+msgstr "エクスポートしたいテンプレートを 「Euro-Officeテンプレート」モジュールで選択し、「エクスポート」をクリックします。この操作は必要な回数だけ繰り返すことができます。"
 
 #. module: eurooffice_odoo_templates
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_form
 msgid ""
 "Choose the <span class=\"fw-bolder\">Odoo module </span>\n"
-"              (e.g., Employee, Invoice, Sales Order) that the template will be linked "
-"to. The chosen\n"
+"              (e.g., Employee, Invoice, Sales Order) that the template will be linked to. The chosen\n"
 "              model defines the data fields available for automatic form filling."
 msgstr ""
 "テンプレートを紐づける <span class=\"fw-bolder\">Odooモジュール </span>\n"
@@ -96,22 +72,19 @@ msgstr ""
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
-#: code:addons/eurooffice_odoo_templates/static/src/views/editor/eurooffice_editor.xml:0
-#, python-format
+#: code:addons/eurooffice_odoo_templates/static/src/views/editor/eurooffice_editor_export_data.xml:0
 msgid "Choose the field below to paste selected parameter to the cursor"
 msgstr "選択したパラメータをカーソルに貼り付けるには、下のフィールドを選択してください"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
 msgid "Choose the required template to fill in with Odoo data."
 msgstr "Odooデータで入力するテンプレートを選択します。"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
 msgid "Click on the Action button."
 msgstr "アクションボタンをクリックします。"
 
@@ -123,14 +96,12 @@ msgstr "設定"
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/editor/eurooffice_editor.js:0
-#, python-format
 msgid "Couldn't insert the field. Please check Automation API."
 msgstr "フィールドを挿入できません。Automation APIを確認してください。"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
-#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_kanban_controller.xml:0
-#, python-format
+#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
 msgid "Create or Upload"
 msgstr "作成またはアップロード"
 
@@ -140,11 +111,13 @@ msgid "Create template"
 msgstr "テンプレートの作成"
 
 #. module: eurooffice_odoo_templates
+#: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_demo_templates__create_uid
 #: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_templates__create_uid
 msgid "Created by"
 msgstr "作成者"
 
 #. module: eurooffice_odoo_templates
+#: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_demo_templates__create_date
 #: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_templates__create_date
 msgid "Created on"
 msgstr "作成日"
@@ -156,11 +129,11 @@ msgstr "削除"
 
 #. module: eurooffice_odoo_templates
 #: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_res_config_settings__editable_form_fields
-#: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.res_config_settings_view_form
 msgid "Disable form fields after printing PDF form"
 msgstr "PDFフォーム印刷後にフォームフィールドを無効化"
 
 #. module: eurooffice_odoo_templates
+#: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_demo_templates__display_name
 #: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_templates__display_name
 msgid "Display Name"
 msgstr "表示名"
@@ -169,11 +142,6 @@ msgstr "表示名"
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_kanban
 msgid "Download"
 msgstr "ダウンロード"
-
-#. module: eurooffice_odoo_templates
-#: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_kanban
-msgid "Dropdown menu"
-msgstr "ドロップダウンメニュー"
 
 #. module: eurooffice_odoo_templates
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_kanban
@@ -193,29 +161,26 @@ msgstr "テンプレートを「Euro-Officeテンプレート」モジュール�
 #. module: eurooffice_odoo_templates
 #. odoo-python
 #: code:addons/eurooffice_odoo_templates/models/eurooffice_odoo_templates.py:0
-#, python-format
 msgid "Failed to download converted PDF form"
 msgstr "変換済みPDFフォームのダウンロードに失敗しました"
 
 #. module: eurooffice_odoo_templates
 #. odoo-python
 #: code:addons/eurooffice_odoo_templates/models/eurooffice_odoo_templates.py:0
-#, python-format
 msgid "Failed to download form"
 msgstr "フォームのダウンロードに失敗しました"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/editor/eurooffice_editor.xml:0
-#, python-format
 msgid "Fields"
 msgstr "フィールド"
 
 #. module: eurooffice_odoo_templates
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.res_config_settings_view_form
 msgid ""
-"Form fields cannot be filled in manually if they were not automatically filled in\n"
-"                  with data from Odoo"
+"Form fields cannot be filled in manually if they were not automatically "
+"filled in with data from Odoo"
 msgstr ""
 "Odooのデータで自動入力されなかったフィールドは、\n"
 "                  手動で入力できません"
@@ -223,7 +188,6 @@ msgstr ""
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
 msgid "Go to the relevant Odoo module (e.g., Sales, Invoices)."
 msgstr "該当するOdooモジュール（例：販売、請求）に移動します。"
 
@@ -236,7 +200,6 @@ msgstr "グループ分け"
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.js:0
 #: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_kanban_controller.xml:0
-#, python-format
 msgid "Help"
 msgstr "ヘルプ"
 
@@ -246,6 +209,7 @@ msgid "Hide File Field"
 msgstr "ファイルフィールドを非表示"
 
 #. module: eurooffice_odoo_templates
+#: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_demo_templates__id
 #: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_templates__id
 msgid "ID"
 msgstr "ID"
@@ -262,28 +226,17 @@ msgstr ""
 #. module: eurooffice_odoo_templates
 #. odoo-python
 #: code:addons/eurooffice_odoo_templates/models/eurooffice_odoo_templates.py:0
-#, python-format
 msgid "Invalid file format."
 msgstr "無効なファイル形式です。"
 
 #. module: eurooffice_odoo_templates
-#. odoo-javascript
-#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_kanban_record.js:0
-#, python-format
-msgid "Kanban: no action for type: "
-msgstr "カンバン：タイプに対するアクションがありません："
-
-#. module: eurooffice_odoo_templates
-#: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_templates____last_update
-msgid "Last Modified on"
-msgstr "最終編集日"
-
-#. module: eurooffice_odoo_templates
+#: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_demo_templates__write_uid
 #: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_templates__write_uid
 msgid "Last Updated by"
 msgstr "最終更新したユーザー"
 
 #. module: eurooffice_odoo_templates
+#: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_demo_templates__write_date
 #: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_templates__write_date
 msgid "Last Updated on"
 msgstr "最終更新日"
@@ -291,7 +244,6 @@ msgstr "最終更新日"
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/widget/eurooffice_templates_tree.xml:0
-#, python-format
 msgid "Loading templates..."
 msgstr "テンプレートを読み込み中..."
 
@@ -299,8 +251,7 @@ msgstr "テンプレートを読み込み中..."
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_form
 msgid ""
 "Locate your newly created template and set up the connections between the form\n"
-"                fields in the Euro-Office editor and the corresponding data fields from "
-"the selected\n"
+"                fields in the Euro-Office editor and the corresponding data fields from the selected\n"
 "                Odoo model."
 msgstr ""
 "作成したテンプレートを開き、\n"
@@ -323,64 +274,13 @@ msgid "Mimetype"
 msgstr "Mimetype"
 
 #. module: eurooffice_odoo_templates
-#. odoo-javascript
-#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
-msgid "Ok"
-msgstr "OK"
-
-#. module: eurooffice_odoo_templates
-#. odoo-javascript
-#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
-msgid ""
-"On this page, you can create form templates for any Odoo module, such as Invoice, "
-"Receipt, Employee Leave Form, etc. Just click"
-msgstr ""
-"このページでは、請求書、領収書、休暇申請など、任意のOdooモジュール用にフォームテンプレー"
-"トを作成できます。クリックして開始してください。"
-
-#. module: eurooffice_odoo_templates
-#: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_form
-msgid "Once you've saved the template, return to the Euro-Office Templates list."
-msgstr "テンプレートを保存したら、Euro-Officeテンプレートリストに戻ります。"
-
-#. module: eurooffice_odoo_templates
-#. odoo-javascript
-#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_kanban_controller.xml:0
-#, python-format
-msgid "Open Document templates"
-msgstr "ドキュメントテンプレートを開く"
-
-#. module: eurooffice_odoo_templates
-#. odoo-javascript
-#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
-msgid "Open a record."
-msgstr "レコードを開きます。"
-
-#. module: eurooffice_odoo_templates
-#. odoo-javascript
-#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
-msgid "Press the Print button."
-msgstr "印刷ボタンを押します。"
-
-#. module: eurooffice_odoo_templates
-#. odoo-javascript
-#: code:addons/eurooffice_odoo_templates/static/src/views/dialog/eurooffice_dialog.xml:0
-#, python-format
-msgid "Preview"
-msgstr "プレビュー"
-
-#. module: eurooffice_odoo_templates
-#: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_templates__template_model_model
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_kanban_search
 msgid "Model"
 msgstr "モデル"
 
 #. module: eurooffice_odoo_templates
 #: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_templates__template_model_name
+#: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_templates__template_model_related_name
 msgid "Model Description"
 msgstr "モデルの説明"
 
@@ -391,15 +291,13 @@ msgstr "テンプレートが作成されるモデル。"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
-#: code:addons/eurooffice_odoo_templates/static/src/views/editor/eurooffice_editor.xml:0
-#, python-format
+#: code:addons/eurooffice_odoo_templates/static/src/views/editor/eurooffice_editor_export_data.xml:0
 msgid "Module/ section"
 msgstr "モジュール/セクション"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/editor/eurooffice_editor_export_data.xml:0
-#, python-format
 msgid "No match found."
 msgstr "一致しているものはありません"
 
@@ -412,20 +310,25 @@ msgstr "Euro-Officeデモテンプレート"
 #: model:ir.actions.act_window,name:eurooffice_odoo_templates.action_eurooffice_odoo_templates
 #: model:ir.model,name:eurooffice_odoo_templates.model_eurooffice_odoo_templates
 #: model:ir.ui.menu,name:eurooffice_odoo_templates.eurooffice_menu
+#: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.res_config_settings_view_form
 msgid "Euro-Office Templates"
 msgstr "Euro-Officeテンプレート"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
+#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
+msgid "Euro-Office Templates module"
+msgstr "Euro-Officeテンプレートモジュール"
+
+#. module: eurooffice_odoo_templates
+#. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/editor/eurooffice_editor.xml:0
-#, python-format
 msgid "Euro-Office cannot be reached. Please contact admin."
 msgstr "Euro-Officeにアクセスできません。管理者にご連絡ください。"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/editor/eurooffice_editor.xml:0
-#, python-format
 msgid "Euro-Office logo"
 msgstr "Euro-Officeロゴ"
 
@@ -436,22 +339,65 @@ msgstr "Euro-Officeテンプレート"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
+#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
+msgid "Ok"
+msgstr "OK"
+
+#. module: eurooffice_odoo_templates
+#. odoo-javascript
+#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
+msgid ""
+"On this page, you can create form templates for any Odoo module, such as "
+"Invoice, Receipt, Employee Leave Form, etc. Just click"
+msgstr ""
+"このページでは、請求書、領収書、休暇申請など、任意のOdooモジュール用にフォームテンプレー"
+"トを作成できます。クリックして開始してください。"
+
+#. module: eurooffice_odoo_templates
+#: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_form
+msgid "Once you've saved the template, return to the Euro-Office Templates list."
+msgstr "テンプレートを保存したら、Euro-Officeテンプレートリストに戻ります。"
+
+#. module: eurooffice_odoo_templates
+#. odoo-javascript
+#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_kanban_controller.xml:0
+msgid "Open Document templates"
+msgstr "ドキュメントテンプレートを開く"
+
+#. module: eurooffice_odoo_templates
+#. odoo-javascript
+#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
+msgid "Open a record."
+msgstr "レコードを開きます。"
+
+#. module: eurooffice_odoo_templates
+#. odoo-javascript
+#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
+msgid "Press the Print button."
+msgstr "印刷ボタンを押します。"
+
+#. module: eurooffice_odoo_templates
+#. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/dialog/eurooffice_dialog.xml:0
-#, python-format
+msgid "Preview"
+msgstr "プレビュー"
+
+#. module: eurooffice_odoo_templates
+#. odoo-javascript
+#: code:addons/eurooffice_odoo_templates/static/src/views/dialog/eurooffice_dialog.xml:0
 msgid "Print"
 msgstr "印刷"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/dialog/eurooffice_dialog.js:0
-#, python-format
 msgid "Print from template"
 msgstr "テンプレートから印刷"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/form/eurooffice_form_view.js:0
-#, python-format
+#: code:addons/eurooffice_odoo_templates/static/src/views/list/eurooffice_list_view.js:0
 msgid "Print with Euro-Office"
 msgstr "Euro-Officeで印刷"
 
@@ -463,16 +409,15 @@ msgstr "モデルを選択"
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
 msgid "Select Print with Euro-Office."
 msgstr "Euro-Officeで印刷を選択します。"
 
 #. module: eurooffice_odoo_templates
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_form
-msgid "Select an existing template. Leave the field blank to create a blank template."
-msgstr ""
-"既存のテンプレートを選択してください。空白の「テンプレート」を作成するには、フィールドを"
-"空白のままにしてください。"
+msgid ""
+"Select an existing template. Leave the field blank to create a blank "
+"template."
+msgstr "既存のテンプレートを選択してください。空白の「テンプレート」を作成するには、フィールドを空白のままにしてください。"
 
 #. module: eurooffice_odoo_templates
 #: model:ir.model.fields,field_description:eurooffice_odoo_templates.field_eurooffice_odoo_demo_templates__selected_templates
@@ -482,7 +427,6 @@ msgstr "選択されたテンプレート"
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/editor/eurooffice_editor_export_data.xml:0
-#, python-format
 msgid "Show sub-fields"
 msgstr "サブフィールドを表示"
 
@@ -497,31 +441,34 @@ msgid "Template creation"
 msgstr "テンプレート作成"
 
 #. module: eurooffice_odoo_templates
-#. odoo-javascript
-#: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_kanban_record.js:0
-#, python-format
-msgid "Template removed"
-msgstr "テンプレートが削除されました"
-
-#. module: eurooffice_odoo_templates
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_form
 msgid "Template uploading"
 msgstr "テンプレートがアップロードされています"
 
 #. module: eurooffice_odoo_templates
+#: model:ir.ui.menu,name:eurooffice_odoo_templates.eurooffice_submenu
+msgid "Templates"
+msgstr "テンプレート"
+
+#. module: eurooffice_odoo_templates
+#: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.res_config_settings_view_form
+msgid "Templates gallery"
+msgstr "テンプレートギャラリー"
+
+#. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
-msgid "The Euro-Office Templates module allows you to create, manage, and use fillable PDF"
+msgid ""
+"The Euro-Office Templates module allows you to create, manage, and use "
+"fillable PDF"
 msgstr "Euro-Officeテンプレートモジュールでは、入力可能なPDFの作成、管理、利用が可能です"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
 msgid ""
-"This will generate a PDF document with your template, automatically filled with the "
-"corresponding record's data."
+"This will generate a PDF document with your template, automatically filled "
+"with the corresponding record's data."
 msgstr ""
 "これにより、テンプレートに基づいたPDF文書が生成され、対応するレコードのデータが自動的に入"
 "力されます。"
@@ -529,7 +476,6 @@ msgstr ""
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
 msgid "To fill in a template with Odoo data:"
 msgstr "テンプレートにOdooデータを入力する手順："
 
@@ -541,7 +487,6 @@ msgstr "既存のテンプレートをアップロード"
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/editor/eurooffice_editor_export_data.xml:0
-#, python-format
 msgid "Use a technical name"
 msgstr "技術的な名称を使用"
 
@@ -549,8 +494,7 @@ msgstr "技術的な名称を使用"
 #: model_terms:ir.ui.view,arch_db:eurooffice_odoo_templates.view_eurooffice_form
 msgid ""
 "Use this form to create a new fillable PDF template\n"
-"              for your Odoo modules. Start by entering a <span class=\"fw-bolder\">name "
-"</span> for\n"
+"              for your Odoo modules. Start by entering a <span class=\"fw-bolder\">name </span> for\n"
 "              your template to easily identify it later in the Euro-Office Templates list."
 msgstr ""
 "このフォームを使用して、\n"
@@ -566,22 +510,18 @@ msgstr "ユーザー"
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/dialog/eurooffice_dialog.js:0
-#, python-format
 msgid ""
-"You don't have any templates yet. Please go to the Euro-Office Templates app to create a "
-"new template or ask your admin to create it."
-msgstr ""
-"まだテンプレートがありません。Euro-Officeテンプレートアプリから新しいテンプレートを作成す"
-"るか、管理者に作成を依頼してください。"
+"You don't have any templates yet. Please go to the Euro-Office Templates app "
+"to create a new template or ask your admin to create it."
+msgstr "まだテンプレートがありません。Euro-Officeテンプレートアプリから新しいテンプレートを作成するか、管理者に作成を依頼してください。"
 
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
 msgid ""
-"for any installed Odoo module (e.g., Sales, Invoicing, CRM). These templates can then be "
-"filled in automatically with real-time data from your Odoo system — no manual input "
-"needed."
+"for any installed Odoo module (e.g., Sales, Invoicing, CRM). These templates"
+" can then be filled in automatically with real-time data from your Odoo "
+"system — no manual input needed."
 msgstr ""
 "インストール済みのOdooモジュール（例：販売、請求書発行、CRM）向けに用意されています。これ"
 "らのテンプレートには、Odooシステムからのリアルタイムデータが自動的に入力されるため、手動"
@@ -590,6 +530,5 @@ msgstr ""
 #. module: eurooffice_odoo_templates
 #. odoo-javascript
 #: code:addons/eurooffice_odoo_templates/static/src/views/kanban/eurooffice_dialog_help.xml:0
-#, python-format
 msgid "templates"
 msgstr "テンプレート"

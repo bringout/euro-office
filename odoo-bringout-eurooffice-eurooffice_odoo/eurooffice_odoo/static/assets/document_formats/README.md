@@ -4,30 +4,30 @@ This repository contains the list of file formats (electronic documents, forms, 
 
 The repository is used in:
 * [Document Server integration example](https://github.com/Euro-Office/document-server-integration)
-* [Euro-Office addon for Plone](https://github.com/Euro-Office/eurooffice-plone)
-* [Euro-Office app for Box](https://github.com/Euro-Office/eurooffice-box)
-* [Euro-Office app for Confluence Cloud](https://github.com/Euro-Office/eurooffice-confluence-cloud)
-* [Euro-Office app for Dropbox](https://github.com/Euro-Office/eurooffice-dropbox)
-* [Euro-Office app for Mattermost](https://github.com/Euro-Office/eurooffice-mattermost)
-* [Euro-Office app for Miro](https://github.com/Euro-Office/eurooffice-miro)
-* [Euro-Office app for Nextcloud](https://github.com/Euro-Office/eurooffice-nextcloud)
+* [Euro-Office addon for Plone](https://github.com/Euro-Office/onlyoffice-plone)
+* [Euro-Office app for Box](https://github.com/Euro-Office/onlyoffice-box)
+* [Euro-Office app for Confluence Cloud](https://github.com/Euro-Office/onlyoffice-confluence-cloud)
+* [Euro-Office app for Dropbox](https://github.com/Euro-Office/onlyoffice-dropbox)
+* [Euro-Office app for Mattermost](https://github.com/Euro-Office/onlyoffice-mattermost)
+* [Euro-Office app for Miro](https://github.com/Euro-Office/onlyoffice-miro)
+* [Euro-Office app for Nextcloud](https://github.com/Euro-Office/onlyoffice-nextcloud)
 * [Euro-Office app for Odoo](https://github.com/Euro-Office/eurooffice_odoo)
-* [Euro-Office app for ownCloud](https://github.com/Euro-Office/eurooffice-owncloud)
-* [Euro-Office app for Slack](https://github.com/Euro-Office/eurooffice-slack)
-* [Euro-Office bot for Telegram](https://github.com/Euro-Office/eurooffice-telegram)
+* [Euro-Office app for ownCloud](https://github.com/Euro-Office/onlyoffice-owncloud)
+* [Euro-Office app for Slack](https://github.com/Euro-Office/onlyoffice-slack)
+* [Euro-Office bot for Telegram](https://github.com/Euro-Office/onlyoffice-telegram)
 * [Euro-Office DocSpace](https://github.com/Euro-Office/DocSpace)
 * [Euro-Office Docs Integration Java SDK](https://github.com/Euro-Office/docs-integration-sdk-java)
 * [Euro-Office Docs Integration PHP SDK](https://github.com/Euro-Office/docs-integration-sdk-php)
-* [Euro-Office extension for Directus](https://github.com/Euro-Office/eurooffice-directus)
-* [Euro-Office module for HumHub](https://github.com/Euro-Office/eurooffice-humhub)
-* [Euro-Office plugin for Redmine](https://github.com/Euro-Office/eurooffice-redmine)
-* [Euro-Office plugin for WordPress](https://github.com/Euro-Office/eurooffice-wordpress)
+* [Euro-Office extension for Directus](https://github.com/Euro-Office/onlyoffice-directus)
+* [Euro-Office module for HumHub](https://github.com/Euro-Office/onlyoffice-humhub)
+* [Euro-Office plugin for Redmine](https://github.com/Euro-Office/onlyoffice-redmine)
+* [Euro-Office plugin for WordPress](https://github.com/Euro-Office/onlyoffice-wordpress)
 
 ## Project info
 
 Euro-Office Docs (Document Server): [github.com/Euro-Office/DocumentServer](https://github.com/Euro-Office/DocumentServer)
 
-Official website: [www.eurooffice.com](https://www.eurooffice.com/)
+Official website: [www.onlyoffice.com](https://www.onlyoffice.com/)
 
 ## Supported formats
 

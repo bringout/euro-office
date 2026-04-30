@@ -2,6 +2,7 @@
 
 import { Component, useRef, useState, onWillStart } from "@odoo/owl"
 import { CheckBox } from "@web/core/checkbox/checkbox"
+import { rpc } from "@web/core/network/rpc"
 import { unique } from "@web/core/utils/arrays"
 import { useService } from "@web/core/utils/hooks"
 import { fuzzyLookup } from "@web/core/utils/search"
@@ -54,7 +55,7 @@ export class ExportData extends Component {
     this.dialog = useService("dialog")
     this.notification = useService("notification")
     this.orm = useService("orm")
-    this.rpc = useService("rpc")
+    this.rpc = rpc
     this.searchRef = useRef("search")
 
     this.knownFields = {}

@@ -2,8 +2,8 @@
 
 import { Component, onMounted, onWillUnmount } from "@odoo/owl"
 
-export class EuroofficePreview extends Component {
-  static template = "eurooffice_odoo.EuroofficePreview"
+export class OnlyofficePreview extends Component {
+  static template = "eurooffice_odoo.OnlyofficePreview"
 
   static props = {
     close: Function,
@@ -28,6 +28,11 @@ export class EuroofficePreview extends Component {
 
     onMounted(() => {
       document.addEventListener("keydown", handleKeyDown, { capture: true })
+      document.querySelectorAll(".o-overlay-item").forEach((item) => {
+        if (item.querySelector(".o-eurooffice-preview")) {
+          item.classList.add("o-eurooffice-overlay-item")
+        }
+      })
     })
 
     onWillUnmount(() => {

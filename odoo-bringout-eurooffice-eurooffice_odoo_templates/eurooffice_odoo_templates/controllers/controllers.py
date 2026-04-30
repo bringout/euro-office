@@ -13,21 +13,16 @@ from urllib.parse import quote
 
 from odoo import http
 from odoo.http import request
-from odoo.tools import (
-    DEFAULT_SERVER_DATE_FORMAT,
-    DEFAULT_SERVER_DATETIME_FORMAT,
-    file_open,
-    get_lang,
-)
+from odoo.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT, file_open, get_lang
 
-from odoo.addons.eurooffice_odoo.controllers.controllers import Eurooffice_Connector, eurooffice_request
+from odoo.addons.eurooffice_odoo.controllers.controllers import Onlyoffice_Connector, eurooffice_request
 from odoo.addons.eurooffice_odoo.utils import config_utils, file_utils, jwt_utils, url_utils
 from odoo.addons.eurooffice_odoo_templates.utils import config_utils as templates_config_utils
 
 logger = logging.getLogger(__name__)
 
 
-class Eurooffice_Inherited_Connector(Eurooffice_Connector):
+class Onlyoffice_Inherited_Connector(Onlyoffice_Connector):
     @http.route("/eurooffice/template/template_content/<string:path>", auth="public")
     def get_template_content(self, path):
         try:
@@ -49,18 +44,14 @@ class Eurooffice_Inherited_Connector(Eurooffice_Connector):
         if not attachment:
             return request.not_found()
 
-        attachment.validate_access(access_token)
+        attachment._can_return_content(access_token=access_token)
 
         data = attachment.read(["id", "checksum", "public", "name", "access_token"])[0]
         filename = data["name"]
 
-        can_read = attachment.check_access_rights("read", raise_exception=False) and file_utils.can_view(filename)
+        can_read = attachment.has_access("read") and file_utils.can_view(filename)
         hasAccess = http.request.env.user.has_group("eurooffice_odoo_templates.group_eurooffice_odoo_templates_admin")
-        can_write = (
-            hasAccess
-            and attachment.check_access_rights("write", raise_exception=False)
-            and file_utils.can_edit(filename)
-        )
+        can_write = hasAccess and attachment.has_access("write") and file_utils.can_edit(filename)
 
         if not can_read:
             raise Exception("cant read")
@@ -69,7 +60,7 @@ class Eurooffice_Inherited_Connector(Eurooffice_Connector):
         return prepare_editor_values
 
 
-class EuroofficeTemplate_Connector(http.Controller):
+class OnlyofficeTemplate_Connector(http.Controller):
     @http.route("/eurooffice/template/fill", auth="user", type="http")
     def main(self, template_id, record_ids):
         logger.info("GET /eurooffice/template/fill - template: %s, records: %s", template_id, record_ids)

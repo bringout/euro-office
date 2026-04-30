@@ -1,4 +1,4 @@
 # Authors
 
-* Ascensio System SIA: <integration@eurooffice.com>
+* Ascensio System SIA: <integration@onlyoffice.com>
 
