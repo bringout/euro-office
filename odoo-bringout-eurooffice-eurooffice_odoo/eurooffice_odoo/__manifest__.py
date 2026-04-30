@@ -8,7 +8,7 @@
     "author": "Euro-Office",
     "website": "https://github.com/Euro-Office/eurooffice_odoo",
     "category": "Productivity",
-    "version": "3.3.0",
+    "version": "19.0.3.3.0",
     "depends": ["base", "mail"],
     "external_dependencies": {"python": ["pyjwt"]},
     "data": [
