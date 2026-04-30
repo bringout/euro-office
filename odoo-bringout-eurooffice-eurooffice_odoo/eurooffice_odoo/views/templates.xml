@@ -4,7 +4,8 @@
 <!-- -->
 <odoo>
   <template id="eurooffice_layout" name="Euro-Office Editor">
-    <html>
+    &lt;!DOCTYPE html&gt;
+      <html>
       <head>
         <meta charset="UTF-8" />
         <title> Euro-Office - <t t-out="docTitle" /> </title>
